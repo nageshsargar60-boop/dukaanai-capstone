@@ -1,40 +1,98 @@
 ﻿# DukaanAI
 
-DukaanAI helps small shop owners create product listings and manage inventory with AI.
+DukaanAI is a software project focused on improving shop and retail workflows. This repository currently contains two web application folders: a Vite-based frontend and a Next.js web application.
 
-## What works today
+## Repository Structure
 
-The React frontend includes a **product settings form**. Shop owners can enter name, category, prices, GST, stock, and listing details. The form validates input, shows a live preview, and saves settings in the browser with `localStorage`.
+```text
+Dukaan ai/
+├── frontend/       # Vite frontend application
+├── web/            # Next.js web application
+├── .gitignore
+├── CLAUDE.md       # AI coding guidance
+├── LICENSE
+├── README.md
+├── WORKFLOW.md
+└── vercel.json
+```
 
-AI listing generation, a product catalog, and the Express backend are **not built yet**.
+## Prerequisites
 
-## Planned Technology Stack
+- Node.js LTS and npm
+- Git
+- A code editor such as Cursor or VS Code
 
-- Frontend: React and Vite
-- Backend: Node.js and Express
-- AI: Ollama local model
+Check your installation:
 
-## Getting Started
+```powershell
+node --version
+npm --version
+git --version
+```
 
-You need [Node.js](https://nodejs.org/) (LTS) installed.
+## Run the Frontend
 
-```bash
-git clone https://github.com/nageshsargar60-boop/Dukaan_ai.git
-cd Dukaan_ai/frontend
+Open PowerShell in the repository root and run:
+
+```powershell
+cd frontend
 npm install
 npm run dev
 ```
 
-Then open the local URL printed in the terminal (usually `http://localhost:5173`).
+Follow the local URL printed by Vite in the terminal.
 
-Useful commands from `frontend/`:
+## Run the Next.js Application
 
-```bash
-npm run test    # validation checks
-npm run build   # production build
-npm run lint    # lint the frontend
+Open a separate terminal from the repository root:
+
+```powershell
+cd web
+npm install
+npm run dev
 ```
+
+Open the local URL printed by Next.js in the terminal. The default is usually `http://localhost:3000`, unless that port is already in use.
+
+## Production Build Checks
+
+Run these commands from the relevant application directory:
+
+```powershell
+npm run build
+```
+
+For the frontend, run it inside `frontend/`. For the Next.js application, run it inside `web/`.
+
+Available scripts can be checked in each folder's `package.json`.
+
+## Environment Variables and Security
+
+- Check the relevant application's documentation and configuration before setting environment variables.
+- Use a local `.env` file only when required by the application.
+- Never commit API keys, passwords, access tokens, or other secrets.
+- Keep example configuration free of real credentials.
+- Do not upload `node_modules` or generated build output.
+
+## AI-Assisted Development
+
+`CLAUDE.md` contains project guidance for AI-assisted coding. Before accepting AI-generated changes:
+
+1. Review the proposed diff.
+2. Confirm commands and features against the existing code.
+3. Run the relevant build or checks.
+4. Update documentation when behavior or setup changes.
+
+## Contributing
+
+Keep changes focused, use clear commit messages, and test affected applications before submitting changes.
+
+Conventional Commit examples:
+
+- `docs: improve project setup instructions`
+- `chore: update development configuration`
+- `fix: correct an application issue`
 
 ## License
 
-This project is under the MIT License. See the `LICENSE` file for details.
+See [LICENSE](LICENSE) for the license terms.
